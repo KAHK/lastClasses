@@ -17,7 +17,7 @@ public class AllThreads {
         for (int i=0;i<NUM_THREADS; i++){
             myThreads[i] = new MyThread("T_" + i, allThreads);
         }
-
+//set5ryhshshd
         for (int i=0; i<NUM_THREADS; i++){
             myThreads[i].start();
         }
