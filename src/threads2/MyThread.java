@@ -5,10 +5,12 @@ public class MyThread extends Thread {
     private int iterator;
 
     private AllThreads allThreads;
+    private Thread nextThread;
 
     public MyThread(String name, AllThreads allThreads){
         this.name = name;
         this.allThreads = allThreads;
+        this.nextThread = nextThread;
     }
 
     public MyThread(String name) {
@@ -19,6 +21,7 @@ public class MyThread extends Thread {
     @Override
     public void run() {
         try{
+            if (nextThread!=null) nextThread.join();
             while (iterator<10){
                 iterator++;
                 System.out.println(name + "it=" + iterator);
